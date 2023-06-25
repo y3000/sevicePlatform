@@ -7,8 +7,7 @@ export default defineConfig({
   initialState: {},
   request: {},
   layout: {
-    title: '技术研发平台',
-    locale: false,
+    title: '西南国土生态环境监测智能预警技术研发与服务平台',
     layout: 'top',
   },
   routes: [
