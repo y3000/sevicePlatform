@@ -7,7 +7,9 @@ export default defineConfig({
   initialState: {},
   request: {},
   layout: {
-    title: '@umijs/max',
+    title: '技术研发平台',
+    locale: false,
+    layout: 'top',
   },
   routes: [
     {
