@@ -8,6 +8,7 @@ const HomePage: React.FC = () => {
   const { name } = useModel('global');
   return (
     <PageContainer ghost>
+      111
       <div className={styles.container}>
         <Guide name={trim(name)} />
       </div>
