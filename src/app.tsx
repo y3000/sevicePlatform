@@ -1,5 +1,7 @@
 // 运行时配置
-import Title from '@/components/TitleComponent';
+import Footer from '@/components/Footer';
+import RightContent from '@/components/Header/RightContent';
+import Title from '@/components/Header/TitleComponent';
 // 全局初始化数据配置，用于 Layout 用户信息和权限初始化
 // 更多信息见文档：https://umijs.org/docs/api/runtime-config#getinitialstate
 export async function getInitialState(): Promise<{ name: string }> {
@@ -12,9 +14,9 @@ export const layout = () => {
     logo: () => {
       return (
         <img
-          style={{ height: '60px' }}
+          style={{ height: '80px' }}
           alt="Logo"
-          src={require('./assets/images/logo.png')}
+          src={require('./assets/images/logo1.png')}
         />
       );
     },
@@ -23,5 +25,27 @@ export const layout = () => {
     },
     layout: 'top',
     title: <Title />,
+    siderWidth: 200,
+    // 菜单的收起和展开
+    // collapsed: false,
+    // 固定顶部
+    fixedHeader: false,
+    // 菜单头
+    // menuHeaderRender: false,
+    // 可以自定义顶栏
+    // headerRender: false,
+    // 可以自定义页脚
+    // footerRender: false,
+    // 可以自定义菜单区域
+    // menuRender: false,
+    // 可以为菜单增加一个额外内容，在菜单头和菜单之间
+    menuExtraRender: false,
+    // 右上角头像信息展示
+    rightContentRender: () => <RightContent />,
+    footerRender: () => <Footer />,
+    fixSiderbar: true,
+    logout: () => {
+      console.log('退出登录');
+    },
   };
 };
