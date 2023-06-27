@@ -6,11 +6,38 @@ export default defineConfig({
   model: {},
   initialState: {},
   request: {},
+  favicons: [
+    // 完整地址
+    // 'https://domain.com/favicon.ico',
+    // 此时将指向 `/favicon.png` ，确保你的项目含有 `public/favicon.png`
+    '/favicon.png',
+  ],
   layout: {
     title: '西南国土生态环境监测智能预警技术研发与服务平台',
     layout: 'top',
   },
   routes: [
+    {
+      name: '登录',
+      path: '/login',
+      component: './Login',
+      layout: 'top',
+      // 不展示顶栏
+      headerRender: false,
+      // 不展示页脚
+      // footerRender: false,
+      // 不展示菜单
+      menuRender: false,
+      fixedHeader: true,
+      hideNav: true,
+      // 不展示菜单顶栏
+      // menuHeaderRender: false,
+      hideInMenu: true,
+      // flatMenu: false,
+      // disabled: true,
+      // access: 'canRead',
+      // hideChildrenInMenu: true,
+    },
     {
       path: '/',
       redirect: '/home',

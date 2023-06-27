@@ -1,3 +1,4 @@
+import { history } from '@umijs/max';
 import React from 'react';
 
 const RightContent: React.FC = () => {
@@ -5,7 +6,9 @@ const RightContent: React.FC = () => {
   return (
     <>
       <span>{userName}，您好！</span>
-      <a href="#">退出登录</a>
+      <a href="#" onClick={() => history.push('/login')}>
+        退出登录
+      </a>
     </>
   );
 };
