@@ -27,4 +27,26 @@
       height: 600px;
     }
   }
+
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .navCard {
+    display: inline-block;
+    margin: 20px 10px;
+    flex: 0 1 1;
+
+    :global {
+      .ant-card-bordered .ant-card-cover {
+        min-height: 200px !important;
+
+        img {
+          height: 200px;
+        }
+      }
+    }
+  }
 }

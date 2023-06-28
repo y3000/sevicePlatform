@@ -14,7 +14,7 @@ import './style.less';
 // 登录
 const Login: React.FC = () => {
   // const { name } = useModel('global');
-  const [loginType, setLoginType] = useState<LoginType>('org');
+  const [loginType, setLoginType] = useState<LoginType>('account');
   return (
     <div className="login">
       <h2>
@@ -50,7 +50,7 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <UserOutlined className={'prefixIcon'} />,
                 }}
-                placeholder={'用户名: admin or user'}
+                placeholder={'用户名: admin'}
                 rules={[
                   {
                     required: true,
@@ -82,7 +82,7 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <UserOutlined className={'prefixIcon'} />,
                 }}
-                placeholder={'组织机构名'}
+                placeholder={'组织机构名: admin'}
                 rules={[
                   {
                     required: true,
