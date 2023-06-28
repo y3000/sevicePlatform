@@ -7,16 +7,10 @@ const HomePage: React.FC = () => {
   return (
     <PageContainer ghost title={false}>
       <div className={styles.container}>
-        <Carousel autoplay className={styles.lunbo}>
-          <div>
-            <img src="lunbotu1.png" alt="" />
-          </div>
-          <div>
-            <img src="lunbotu2.jpg" alt="" />
-          </div>
-          <div>
-            <img src="lunbotu3.jpg" alt="" />
-          </div>
+        <Carousel className={styles.lunbo}>
+          <div className={styles.lunbo1}>1</div>
+          <div className={styles.lunbo2}>2</div>
+          <div className={styles.lunbo3}>3</div>
         </Carousel>
       </div>
     </PageContainer>
