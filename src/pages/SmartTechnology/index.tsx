@@ -1,4 +1,5 @@
 import { PageContainer } from '@ant-design/pro-components';
+import { history } from 'umi';
 import NavCard from '../Home/components/NavCard';
 // import { useModel } from '@umijs/max';
 // import styles from './index.less';
@@ -18,7 +19,11 @@ const SmartTechnologyPage: React.FC = () => {
     >
       111
       <div>智能技术</div>
-      <NavCard title="知识图谱" imgUrl="tupu.png" />
+      <NavCard
+        title="知识图谱"
+        imgUrl="tupu.png"
+        clickHandle={() => history.push('http://1.14.7.101/math_neo4j_web/')}
+      />
       <NavCard title="时序模型" imgUrl="shixumoxin.png" />
       <NavCard title="异常检测" imgUrl="yichangjiance.jpg" />
       <NavCard title="PINN网络" imgUrl="pinn.jpg" />
