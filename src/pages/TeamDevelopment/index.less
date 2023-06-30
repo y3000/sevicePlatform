@@ -1,12 +1,25 @@
 .container {
   // padding-top: 80px;
-  padding: 40px 110px;
+  padding: 40px 90px;
+  background-color: #02021F;
   .team{
     margin-bottom: 25px;
+    color: #fff;
+    // border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    box-shadow: 0 1px 2px -2px #fff,
+        0 3px 6px 0 rgba(0, 0, 0, 12%), 0 5px 12px 4px rgba(0, 0, 0, 9%);
     .title{
       font-weight: 400;
       font-size: 28px;
       margin-bottom: 20px;
+      background-image: linear-gradient(
+        180deg,
+      rgba(255, 255, 255, 100%),
+      #03258B
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .content{
       margin: 0 auto;
@@ -18,10 +31,20 @@
   }
   .achievement{
     margin-bottom: 25px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 30%);
+    padding: 20px;
     .title{
       font-weight: 400;
       font-size: 28px;
       margin-bottom: 20px;
+      background-image: linear-gradient(
+        180deg,
+      rgba(255, 255, 255, 100%),
+      #03258B
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .imgs{
       display: flex;
@@ -31,7 +54,12 @@
         width: 300px;
         height: 350px;
         margin: 0 5px;
+        border: 1px solid #231f35;
         text-align: center;
+
+        &:hover{
+          border-color: #1527c2;
+        }
         img{
           width: 300px;
           height: 300px;
@@ -44,15 +72,26 @@
   }
   .exchange{
     margin-bottom: 25px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 30%);
+    padding: 20px;
     .title{
       font-weight: 400;
       font-size: 28px;
       margin-bottom: 20px;
+      background-image: linear-gradient(
+        180deg,
+      rgba(255, 255, 255, 100%),
+      #03258B
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .imgs{
       display: flex;
       // justify-content: space-around;
       flex-wrap: wrap;
+      justify-content: center;
       .single{
         width: 400px;
         height: 300px;
