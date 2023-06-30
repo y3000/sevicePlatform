@@ -24,16 +24,20 @@ const TeamPage: React.FC = () => {
           <div className="title">大创成果</div>
           <div className="imgs">
             <div className="single">
-              <img src="/2.png"></img>
+              <img src="/2021挑战杯二等将.jpg"></img>
+              2021挑战杯二等奖
             </div>
             <div className="single">
-              <img src="/2.png"></img>
+              <img src="/2022年住家规划师AI算法获奖照片1.jpg"></img>
+              2022年住家规划师AI算法获奖照片
             </div>
             <div className="single">
-              <img src="/2.png"></img>
+              <img src="/互联网+四川省铜奖.jpg"></img>
+              互联网+四川省铜奖
             </div>
             <div className="single">
-              <img src="/2.png"></img>
+              <img src="/挑战杯四川省金奖.jpg"></img>
+              挑战杯四川省金奖
             </div>
           </div>
         </div>
@@ -41,10 +45,10 @@ const TeamPage: React.FC = () => {
           <div className="title">学术交流</div>
           <div className="imgs">
             <div className="single">
-              <img src="/2.png"></img>
+              <img src="/xueshu1.jpg"></img>
             </div>
             <div className="single">
-              <img src="/2.png"></img>
+              <img src="/xueshu2.jpg"></img>
             </div>
           </div>
         </div>
