@@ -26,19 +26,19 @@ const TeamPage: React.FC = () => {
           <div className={styles.title}>大创成果</div>
           <div className={styles.imgs}>
             <div className={styles.single}>
-              <Image src="/2021挑战杯二等将.jpg"></Image>
+              <Image src="/2021.jpg"></Image>
               <p>2021挑战杯二等奖</p>
             </div>
             <div className={styles.single}>
-              <Image src="/2022年住家规划师AI算法获奖照片1.jpg"></Image>
+              <Image src="/2022.jpg"></Image>
               <p>2022年住家规划师AI算法获奖照片</p>
             </div>
             <div className={styles.single}>
-              <Image src="/互联网+四川省铜奖.jpg"></Image>
+              <Image src="/internet.jpg"></Image>
               <p>互联网+四川省铜奖</p>
             </div>
             <div className={styles.single}>
-              <Image src="/挑战杯四川省金奖.jpg"></Image>
+              <Image src="/gold.jpg"></Image>
               <p>挑战杯四川省金奖</p>
             </div>
           </div>

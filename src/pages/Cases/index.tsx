@@ -23,7 +23,7 @@ const CasesPage: React.FC = () => {
         </div>
         <div className={styles.case}>
           <div className={styles.left}>
-            <video src='/青田系统短视频.mp4' controls></video>
+            <video src='/qing.mp4' controls></video>
             {/* <video loop autoPlay muted>
               <source src="/青田系统短视频.mp4"  type="video/mp4"/>
             </video> */}
@@ -38,7 +38,7 @@ const CasesPage: React.FC = () => {
         </div>
         <div className={styles.case}>
           <div className={styles.left}>
-            <video src='/贾汪系统短视频.mp4' controls></video>
+            <video src='/jia.mp4' controls></video>
             {/* <video loop autoPlay muted>
               <source src="/贾汪系统短视频.mp4"  type="video/mp4"/>
             </video> */}
