@@ -1,7 +1,7 @@
 // 运行时配置
 import Footer from '@/components/Footer';
 import RightContent from '@/components/Header/RightContent';
-import Title from '@/components/Header/TitleComponent';
+import Header from './components/Header';
 // 全局初始化数据配置，用于 Layout 用户信息和权限初始化
 // 更多信息见文档：https://umijs.org/docs/api/runtime-config#getinitialstate
 export async function getInitialState(): Promise<{ name: string }> {
@@ -24,7 +24,11 @@ export const layout = () => {
       locale: false,
     },
     layout: 'top',
-    title: <Title />,
+    // title: <Title />,
+    title: '西南国土生态环境监测智能预警技术研发与服务平台',
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    headerTitleRender: (_logo: any, _title: any, _props: any) => <Header />,
+    // headerContentRender: false,
     siderWidth: 200,
     // 菜单的收起和展开
     // collapsed: false,
