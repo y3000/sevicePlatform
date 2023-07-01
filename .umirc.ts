@@ -56,6 +56,22 @@ export default defineConfig({
       name: ' 算法模型',
       path: '/models',
       component: './AlgorithmicModels',
+      routes: [
+        {
+          name: '模型详情',
+          path: '/models/detail/:id',
+          component: './AlgorithmicModels/ModelDetail',
+          hideChildrenInMenu: true,
+          hideInMenu: true,
+        },
+      ],
+    },
+    {
+      name: '模型详情',
+      path: '/modelDetail/:id',
+      component: './AlgorithmicModels/ModelDetail',
+      hideChildrenInMenu: true,
+      hideInMenu: true,
     },
     {
       name: '应用案例',

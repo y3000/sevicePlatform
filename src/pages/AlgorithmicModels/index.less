@@ -1,0 +1,96 @@
+.content {
+  display: flex;
+  justify-content: center;
+  background: url('/bg.png') 0 0 no-repeat;
+  background-size: cover;
+  // background-position: left 200px;
+  padding: 40px 110px;
+
+  .header {
+    border-bottom: 1px solid rgb(207, 207, 207);
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: rgb(70, 70, 70);
+    }
+  }
+
+  .search {
+    // display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    display: none;
+
+    :global {
+      .ant-input-search {
+        width: 500px;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    justify-content: center;
+
+    .left {
+      width: 400px;
+
+      h2 {
+        font-size: 18px;
+      }
+
+      :global {
+        .anticon {
+          margin-right: 5px;
+        }
+
+        .ant-radio-button {
+          border-color: rgb(190, 203, 255);
+        }
+
+        .ant-radio-button-wrapper {
+          // border-color: rgb(84, 114, 237);
+          border-radius: 0 !important;
+          height: 28px;
+          line-height: 28px;
+          font-size: 12px;
+          padding: 0 8px;
+          margin: 0 5px 0 0;
+        }
+      }
+
+      .modalType {
+        margin: 10px 0 20px;
+      }
+    }
+
+    .right {
+      width: 100%;
+
+      :global {
+        .ant-pro-card {
+          background-color: rgba(0, 0, 0, 0%);
+
+          .ant-list-item {
+            background-color: white;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding: 10px;
+
+            &:hover {
+              border: 1px solid blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
