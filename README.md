@@ -1,6 +1,6 @@
 # README
 
-`@umijs/max` 项目框架，更多功能参考 [Umi Max 简介](https://umijs.org/docs/max/introduce)
+前端框架：`@umijs/max`
 
 ## 下载依赖
 
