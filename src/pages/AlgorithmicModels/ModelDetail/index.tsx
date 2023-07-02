@@ -2,7 +2,7 @@ import { queryModelDetail } from '@/services/model/model';
 import { DoubleLeftOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-components';
 import { useParams } from '@umijs/max';
-import { Image, Tag } from 'antd';
+import { Image, Space, Tag } from 'antd';
 import { useEffect, useState } from 'react';
 import styles from './index.less';
 /** ===================================
@@ -60,6 +60,7 @@ const SmartTechnologyPage: React.FC = () => {
     ...initData,
   });
   useEffect(() => {
+    window.scrollTo(0, 0);
     console.log('模型id', id);
     queryModelDetail({ id: id as string }).then((res) => {
       const { success, data } = res;
@@ -69,6 +70,7 @@ const SmartTechnologyPage: React.FC = () => {
       }
     });
   }, []);
+
   return (
     <PageContainer ghost className={styles.content} title={false}>
       <a
@@ -103,18 +105,20 @@ const SmartTechnologyPage: React.FC = () => {
       </div>
       <div className={styles.introduce}>
         <h2 className={styles.title}>3. 应用场景</h2>
-        <div className={styles.text}>{data.feature}</div>
+        <div className={styles.text}>{data.case}</div>
         <Image.PreviewGroup
           preview={{
             onChange: (current, prev) =>
               console.log(`current index: ${current}, prev index: ${prev}`),
           }}
         >
-          {data.caseImgUrl?.length
-            ? data.caseImgUrl.map((item, index) => {
-                return <Image width={'40vw'} src={item} key={index} />;
-              })
-            : ''}
+          <Space>
+            {data.caseImgUrl?.length
+              ? data.caseImgUrl.map((item, index) => {
+                  return <Image width={'100%'} src={item} key={index} />;
+                })
+              : ''}
+          </Space>
         </Image.PreviewGroup>
       </div>
       {data.feature && (

@@ -51,22 +51,39 @@ const HomePage: React.FC = () => {
         {/* 智能技术 */}
         <h1 style={{ textAlign: 'center', fontSize: '30px' }}>智能技术</h1>
         <div className={styles.techContent}>
-          <div className={styles.tupucard}>
+          <div
+            className={styles.tupucard}
+            onClick={() => history.push('http://1.14.7.101/math_neo4j_web/')}
+          >
             <h2>知识图谱</h2>
+            <p>
+              知识图谱（Knowledge
+              Graph），在图书情报界称为知识域可视化或知识领域映射地图，
+              是显示知识发展进程与结构关系的一系列各种不同的图形，用可视化技术描述知识资源及其载体，挖掘、分析、构建、绘制和显示知识及它们之间的相互联系。
+            </p>
           </div>
-          <div className={styles.descCrad}>
+          <div
+            className={styles.descCrad}
+            onClick={() => history.push('/modelDetail/m01')}
+          >
             <h2>时序模型</h2>
           </div>
         </div>
         <div className={styles.techContent}>
-          <div className={styles.wairecard}>
+          <div
+            className={styles.wairecard}
+            onClick={() => history.push('/modelDetail/m01')}
+          >
             <h2>异常检测</h2>
-            {/* <p style={{ width: '50%' }}>
+            <p style={{ width: '50%' }}>
               Southwest Land Ecological Environment Monitoring Intelligent Early
               Warning Technology Research and Service Platform
-            </p> */}
+            </p>
           </div>
-          <div className={styles.netcard}>
+          <div
+            className={styles.netcard}
+            onClick={() => history.push('/modelDetail/m01')}
+          >
             <h2>PINN 网络</h2>
           </div>
         </div>
@@ -77,14 +94,23 @@ const HomePage: React.FC = () => {
             <NavCard
               title="自回归积分滑动平均模型"
               imgUrl="arima.png"
-              clickHandle={() =>
-                // history.push('http://1.14.7.101/math_neo4j_web/')
-                console.log('自回归积分滑动平均模型1')
-              }
+              clickHandle={() => history.push('/modelDetail/m01')}
             />
-            <NavCard title="条件自回归模型" imgUrl="cra.jpg" />
-            <NavCard title="径向基模型" imgUrl="rbf.jpg" />
-            <NavCard title="决策树模型" imgUrl="dt.jpg" />
+            <NavCard
+              title="条件自回归模型"
+              imgUrl="cra.jpg"
+              clickHandle={() => history.push('/modelDetail/m02')}
+            />
+            <NavCard
+              title="径向基模型"
+              imgUrl="rbf.jpg"
+              clickHandle={() => history.push('/modelDetail/m03')}
+            />
+            <NavCard
+              title="决策树模型"
+              imgUrl="dt.jpg"
+              clickHandle={() => history.push('/modelDetail/m04')}
+            />
           </div>
         </div>
 

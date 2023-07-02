@@ -5,19 +5,19 @@ import {
   ProFormText,
 } from '@ant-design/pro-components';
 import { Tabs, message } from 'antd';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { history } from 'umi';
 
 type LoginType = 'org' | 'account';
 
+import { useModel } from '@umijs/max';
 import './style.less';
+// import styles from './style.less'
+
 // 登录
 const Login: React.FC = () => {
   const [loginType, setLoginType] = useState<LoginType>('account');
-  useEffect(() => {
-    // const cn = new CanvasNest(document.getElementsByClassName('login'), config);
-    // cn.destroy();
-  }, []);
+  const { setName } = useModel('global');
 
   return (
     <div className="login">
@@ -28,13 +28,15 @@ const Login: React.FC = () => {
       </h2>
       <div className="login-from">
         <LoginForm
-          // logo="favicon.png"
-          // title="登录"
-          // subTitle="面向国土生态环境监测重大需求，开展高水平智能预警技术研发及应用转化。"
+          logo="logo.png"
+          title="用户登录"
+          // subTitle="登录"
           actions={<></>}
           onFinish={async (values) => {
             console.log(values);
+            const { username } = values;
             message.success('登录成功');
+            setName(username);
             history.push('/home');
           }}
         >
@@ -86,11 +88,11 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <UserOutlined className={'prefixIcon'} />,
                 }}
-                placeholder={'组织机构名: admin'}
+                placeholder={'admin'}
                 rules={[
                   {
                     required: true,
-                    message: '请输入组织机构名!',
+                    message: '请输入用户名!',
                   },
                 ]}
               />
@@ -167,13 +169,13 @@ const Login: React.FC = () => {
             <ProFormCheckbox noStyle name="autoLogin">
               自动登录
             </ProFormCheckbox>
-            <a
+            {/* <a
               style={{
                 float: 'right',
               }}
             >
               忘记密码
-            </a>
+            </a> */}
           </div>
         </LoginForm>
       </div>

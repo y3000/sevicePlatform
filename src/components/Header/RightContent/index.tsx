@@ -1,8 +1,10 @@
 import { UserOutlined } from '@ant-design/icons';
-import { history } from '@umijs/max';
+import { history, useModel } from '@umijs/max';
 import React from 'react';
+
 const RightContent: React.FC = () => {
-  const userName = '张三';
+  const { name } = useModel('global');
+  const userName = name || '张三';
   return (
     <div style={{ color: 'gray' }}>
       <UserOutlined className={'prefixIcon'} />

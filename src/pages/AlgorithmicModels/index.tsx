@@ -93,6 +93,8 @@ const AlgorithmicModelsPage: React.FC = () => {
     descriptionTag: [],
     content: '',
   });
+
+  const [isLoading, setLoading] = useState<boolean>(false);
   const [modelList, setModelList] = useState<IModelData[]>([]);
   // 模型类型change事件
   const onChange = (e: RadioChangeEvent) => {
@@ -107,11 +109,12 @@ const AlgorithmicModelsPage: React.FC = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     queryModelList(searchData)
       .then((res) => {
         const { success, data } = res;
         console.log('模型数据请求返回：', data);
-
+        setLoading(false);
         if (success && data?.length > 0) {
           setModelList(data);
         }
@@ -119,6 +122,10 @@ const AlgorithmicModelsPage: React.FC = () => {
       .catch((err) => {
         console.error('请求失败！', err);
       });
+  }, []);
+  // 返回顶部
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
   return (
     <PageContainer ghost title={false} className={styles.content}>
@@ -209,6 +216,7 @@ const AlgorithmicModelsPage: React.FC = () => {
             itemLayout="vertical"
             rowKey="id"
             headerTitle="模型列表展示"
+            loading={isLoading}
             pagination={{
               onChange: (page) => {
                 console.log(page);

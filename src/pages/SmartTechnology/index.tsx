@@ -3,6 +3,7 @@ import { PageContainer } from '@ant-design/pro-components';
 // import NavCard from '../Home/components/NavCard';
 import { Avatar, List } from 'antd';
 // import { useModel } from '@umijs/max';
+import { useEffect } from 'react';
 import styles from './index.less';
 /** ===================================
  * @names: 智能技术
@@ -13,6 +14,10 @@ import styles from './index.less';
 
 const SmartTechnologyPage: React.FC = () => {
   // const { name } = useModel('global');
+  // 返回顶部
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const data = [
     {
       title: '知识图谱',

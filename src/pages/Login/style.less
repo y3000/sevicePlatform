@@ -1,6 +1,14 @@
 main {
   padding-block: 0 !important;
   padding-inline: 0 !important;
+
+  :global {
+    .ant-pro-form-login-header {
+      .ant-pro-form-login-logo {
+        font-size: 26px !important;
+      }
+    }
+  }
 }
 
 .login {
@@ -29,5 +37,9 @@ main {
     background-color: white;
     width: 400px;
     border-radius: 5px;
+
+    :where(.css-dev-only-do-not-override-qv1rgh).ant-pro-form-login-title {
+      font-size: 26px !important;
+    }
   }
 }
