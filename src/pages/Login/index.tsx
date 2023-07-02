@@ -5,7 +5,7 @@ import {
   ProFormText,
 } from '@ant-design/pro-components';
 import { Tabs, message } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { history } from 'umi';
 
 type LoginType = 'org' | 'account';
@@ -13,8 +13,12 @@ type LoginType = 'org' | 'account';
 import './style.less';
 // 登录
 const Login: React.FC = () => {
-  // const { name } = useModel('global');
   const [loginType, setLoginType] = useState<LoginType>('account');
+  useEffect(() => {
+    // const cn = new CanvasNest(document.getElementsByClassName('login'), config);
+    // cn.destroy();
+  }, []);
+
   return (
     <div className="login">
       <h2>

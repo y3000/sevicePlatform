@@ -1,5 +1,5 @@
 import { PageContainer } from '@ant-design/pro-components';
-import { Button, Carousel, Image, Tag } from 'antd';
+import { Button, Carousel, Image, Space } from 'antd';
 import { history } from 'umi';
 import NavCard from './components/NavCard';
 import styles from './index.less';
@@ -10,7 +10,13 @@ const HomePage: React.FC = () => {
     <PageContainer ghost title={false}>
       <div className={styles.container}>
         <Carousel className={styles.lunbo} autoplay>
-          <div className={styles.lunbo1}>1</div>
+          <div className={styles.lunbo1}>
+            <p>
+              面向国土生态环境监测重大需求
+              <br />
+              开展高水平智能预警技术研发及应用转化
+            </p>
+          </div>
           <div className={styles.lunbo2}>2</div>
           <div className={styles.lunbo3}>3</div>
         </Carousel>
@@ -46,55 +52,22 @@ const HomePage: React.FC = () => {
         <h1 style={{ textAlign: 'center', fontSize: '30px' }}>智能技术</h1>
         <div className={styles.techContent}>
           <div className={styles.tupucard}>
-            <h1>知识图谱</h1>
+            <h2>知识图谱</h2>
           </div>
           <div className={styles.descCrad}>
-            <h1>时序模型</h1>
-            <Tag icon={<a />} color="#55acee">
-              LinkedIn
-            </Tag>
-            <Button
-              type="primary"
-              style={{ width: '200px', height: '100px', margin: '10px' }}
-            >
-              异常检测
-            </Button>
+            <h2>时序模型</h2>
           </div>
-
-          {/* <div className={styles.descCrad}>
-            <h1>知识图谱</h1>
-          </div>
-          <div className={styles.descCrad}>
-            <h1>知识图谱</h1>
-          </div> */}
-          {/* <Row>
-            <Col span={12}>知识图谱</Col>
-            <Col span={12}><img src="shixumoxin.png" alt="" /></Col>
-          </Row> */}
-
-          {/* <div className={styles.nav}>
-            <NavCard
-              title="知识图谱"
-              imgUrl="tupu.png"
-              clickHandle={() =>
-                history.push('http://1.14.7.101/math_neo4j_web/')
-              }
-            />
-            <NavCard title="时序模型" imgUrl="shixumoxin.png" />
-            <NavCard title="异常检测" imgUrl="yichangjiance.jpg" />
-            <NavCard title="PINN网络" imgUrl="pinn.jpg" />
-          </div> */}
         </div>
         <div className={styles.techContent}>
           <div className={styles.wairecard}>
-            <h1>异常检测</h1>
-            <p style={{ width: '50%' }}>
+            <h2>异常检测</h2>
+            {/* <p style={{ width: '50%' }}>
               Southwest Land Ecological Environment Monitoring Intelligent Early
               Warning Technology Research and Service Platform
-            </p>
+            </p> */}
           </div>
           <div className={styles.netcard}>
-            <h1>PINN 网络</h1>
+            <h2>PINN 网络</h2>
           </div>
         </div>
         {/* 算法模型 */}
@@ -118,8 +91,21 @@ const HomePage: React.FC = () => {
         {/* 应用案例 */}
         <h1 style={{ textAlign: 'center', fontSize: '30px' }}>应用案例</h1>
         <div className={styles.techContent}>
-          <div className={styles.descCrad}>
-            <h1>应用案例</h1>
+          <div className={styles.case}>
+            <div className={styles.left}>
+              <video src="/qing.mp4" controls></video>
+            </div>
+            <div className={styles.right}>
+              <div className={styles.name}>青田县水环境智慧监测平台</div>
+              <div className={styles.detail}>
+                <p>
+                  通过智能水环境监测系统，能够全面掌握青田县水资源状态，基于系统提供的各类分析模型实时预测预警污染源排放情况，为环境治理的相关工作部署提供有力的技术支撑。
+                </p>
+              </div>
+              <Button size="large">
+                <a href="http://183.245.140.144:8000/#/login">访问系统</a>
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -132,8 +118,10 @@ const HomePage: React.FC = () => {
                 console.log(`current index: ${current}, prev index: ${prev}`),
             }}
           >
-            <Image width={'40vw'} src="jiaoliu1.jpg" />
-            <Image width={'40vw'} src="jiaoliu2.jpg" />
+            <Space>
+              <Image width={'40vw'} src="jiaoliu1.jpg" />
+              <Image width={'40vw'} src="jiaoliu2.jpg" />
+            </Space>
           </Image.PreviewGroup>
         </div>
       </div>

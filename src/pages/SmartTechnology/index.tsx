@@ -18,46 +18,71 @@ const SmartTechnologyPage: React.FC = () => {
       title: '知识图谱',
       imgurl: 'tupu.png',
       href: 'http://1.14.7.101/math_neo4j_web/',
-      description: '知识图谱描述'
+      description:
+        '知识图谱（Knowledge Graph），在图书情报界称为知识域可视化或知识领域映射地图，是显示知识发展进程与结构关系的一系列各种不同的图形，用可视化技术描述知识资源及其载体，挖掘、分析、构建、绘制和显示知识及它们之间的相互联系。',
     },
     {
       title: '时序模型',
       imgurl: 'shixumoxin.png',
-      description: '时序模型描述'
+      href: '/models',
+      description:
+        'TimesNet是时间序列分析的任务-通用基础模型。受多周期性的激励影响，TimesNet可以通过模块化体系结构解决复杂的时间变化，并通过有效的初始块捕获二维空间的周期内和周期间的变化。',
     },
     {
       title: '异常检测',
       imgurl: 'yichangjiance.jpg',
-      description: '异常检测描述'
+      href: '/models',
+      description:
+        'Anomaly Transformer 通过学习关联差异(Association Discrepancy) 来提升异常的可分性。技术上，它提出了Anomaly-Attention 来表征先验关联和序列关联，以及一个极小极大优化策略来获得更容易区分的关联差异。',
     },
     {
       title: 'PINN网络',
       imgurl: 'pinn.jpg',
-      description: 'PINN网络描述'
+      href: '/models',
+      description:
+        'PINN是一种基于神经网络的模型，用于模拟和优化物理系统的行为，并推断出物理参数。通过一般非线性偏微分方程描述的任何给定的物理规律，应用该模型实现对传统数值计算方法的智能化改进，我们主要研究用于解决与偏微分方程(PDE)相关的各种问题:包括方程求解、参数反演、模型发现、控制与优化。',
     },
   ];
   return (
-    <PageContainer
-      ghost
-      title={false}
-    >
+    <PageContainer ghost title={false}>
       <div className={styles.header}>
         <span className={styles.title}>智能技术</span>
-        <span className={styles.detail}>围绕国土生态环境监测预警的智能技术及其重大需求，以西南区域环境（四川）为实际应用场景，开展高水平智能技术研究。</span>
+        <span className={styles.detail}>
+          围绕国土生态环境监测预警的智能技术及其重大需求，以西南区域环境（四川）为实际应用场景，开展高水平智能技术研究。
+        </span>
       </div>
       <div className={styles.introduce}>
         <div className={styles.list}>
           <List
-        itemLayout="horizontal"
-        dataSource={data}
-        renderItem={(item) => (
-          <List.Item>
-            <List.Item.Meta
-              avatar={<Avatar src={`${item.imgurl}`} style={{ width: '450px', height: '300px', borderRadius:'0'}}/>}
-              title={item.href?<a href={`${item.href}`}  style={{fontSize: '30px'}}>{item.title}</a>:<span style={{fontSize: '30px'}}>{item.title}</span>}
-              description={<span style={{fontSize: '20px'}}>{item.description}</span>}
-            />
-          </List.Item>
+            itemLayout="horizontal"
+            dataSource={data}
+            renderItem={(item) => (
+              <List.Item>
+                <List.Item.Meta
+                  avatar={
+                    <Avatar
+                      src={`${item.imgurl}`}
+                      style={{
+                        width: '260px',
+                        height: '200px',
+                        borderRadius: '5px',
+                      }}
+                    />
+                  }
+                  title={
+                    item.href ? (
+                      <a href={`${item.href}`} style={{ fontSize: '24px' }}>
+                        {item.title}
+                      </a>
+                    ) : (
+                      <span style={{ fontSize: '26px' }}>{item.title}</span>
+                    )
+                  }
+                  description={
+                    <span style={{ fontSize: '18px' }}>{item.description}</span>
+                  }
+                />
+              </List.Item>
             )}
           />
         </div>

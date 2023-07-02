@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { PageContainer } from '@ant-design/pro-components';
 // import { useModel } from '@umijs/max';
+import { queryModelList } from '@/services/model/model';
 import {
   AppstoreTwoTone,
   BlockOutlined,
@@ -12,8 +14,8 @@ import {
 } from '@ant-design/icons';
 import { ProList } from '@ant-design/pro-components';
 import { history } from '@umijs/max';
-import { Input, Modal, Radio, RadioChangeEvent, Tag } from 'antd';
-import React from 'react';
+import { Input, Modal, Radio, RadioChangeEvent, Tag, message } from 'antd';
+import React, { useEffect, useState } from 'react';
 import './index.less';
 import styles from './index.less';
 
@@ -63,19 +65,35 @@ const dataSource = [
 ];
 
 /**
- * 数结构设计
- * modelName: string 模型名称
- * introduction： string 模型简介
- * algorithmicTag: [] 核心算法标签
- * algorithmicDeac: string  核心算法简介
- * feature: string  功能特点
- * case: string 应用场景
- * caseImg: img[] 应用场景图片
+ * 模型卡片数结构设计
+ * id: number 模型id  【唯一标识符】
+ * title: string 模型名称
+ * descriptionTag: [] 核心算法标签
+ * content: string 模型简介概述
  * **/
+
+export interface IModelData {
+  id: string; // 模型id  【唯一标识符】
+  title: string; // 模型名称
+  descriptionTag?: string[]; //核心算法标签
+  content: string; // 模型简介概述
+  algorithmicDeac: string; //  模型算法介绍
+  case: string; // 应用场景
+  feature?: string; // 功能特点
+  caseImgUrl?: string[]; // 应用场景图片地址
+}
+
 const AlgorithmicModelsPage: React.FC = () => {
+  const [messageApi, contextHolder] = message.useMessage();
   // 搜索
   const onSearch = (value: string) => console.log(value);
 
+  const [searchData, setSearchData] = useState({
+    title: '',
+    descriptionTag: [],
+    content: '',
+  });
+  const [modelList, setModelList] = useState<IModelData[]>([]);
   // 模型类型change事件
   const onChange = (e: RadioChangeEvent) => {
     console.log(`radio checked:${e.target.value}`);
@@ -88,6 +106,20 @@ const AlgorithmicModelsPage: React.FC = () => {
     });
   };
 
+  useEffect(() => {
+    queryModelList(searchData)
+      .then((res) => {
+        const { success, data } = res;
+        console.log('模型数据请求返回：', data);
+
+        if (success && data?.length > 0) {
+          setModelList(data);
+        }
+      })
+      .catch((err) => {
+        console.error('请求失败！', err);
+      });
+  }, []);
   return (
     <PageContainer ghost title={false} className={styles.content}>
       <div className={styles.header}>
@@ -105,6 +137,7 @@ const AlgorithmicModelsPage: React.FC = () => {
       </div>
 
       <div className={styles.list}>
+        {/* 左侧标签分类 */}
         <div className={styles.left}>
           <div className={styles.modalType}>
             <h2>
@@ -170,7 +203,7 @@ const AlgorithmicModelsPage: React.FC = () => {
             </Radio.Group>
           </div>
         </div>
-
+        {/* 右侧模型卡片列表 */}
         <div className={styles.right}>
           <ProList<{ title: string }>
             itemLayout="vertical"
@@ -182,39 +215,38 @@ const AlgorithmicModelsPage: React.FC = () => {
               },
               pageSize: 3,
             }}
-            dataSource={dataSource}
-            // history.push(`/models/detail/${index}`)
-
+            dataSource={modelList}
+            onItem={(record) => {
+              return {
+                onClick: (event) => {
+                  console.log('点击事件', record);
+                  const { id } = record as IModelData;
+                  if (id) {
+                    history.push(`/modelDetail/${id}`);
+                  } else {
+                    message.error('无法获取到模型id参数');
+                  }
+                }, // 点击行
+                onDoubleClick: (event) => {},
+                onContextMenu: (event) => {},
+                onMouseEnter: (event) => {}, // 鼠标移入行
+                onMouseLeave: (event) => {},
+              };
+            }}
             metas={{
-              title: {
-                dataIndex: 'title',
-              },
+              title: {},
+
               description: {
+                dataIndex: 'descriptionTag',
                 render: (text: any) => {
                   return text?.length ? (
-                    text.map(
-                      (
-                        item:
-                          | string
-                          | number
-                          | boolean
-                          | React.ReactElement<
-                              any,
-                              string | React.JSXElementConstructor<any>
-                            >
-                          | Iterable<React.ReactNode>
-                          | React.ReactPortal
-                          | null
-                          | undefined,
-                        index: React.Key | null | undefined,
-                      ) => {
-                        return (
-                          <Tag key={index} color="geekblue">
-                            {item}
-                          </Tag>
-                        );
-                      },
-                    )
+                    text.map((item: any, index: React.Key) => {
+                      return (
+                        <Tag key={index} color="geekblue">
+                          {item}
+                        </Tag>
+                      );
+                    })
                   ) : (
                     <Tag color="geekblue">{text}</Tag>
                   );
@@ -251,11 +283,7 @@ const AlgorithmicModelsPage: React.FC = () => {
               },
               content: {
                 render: (text) => {
-                  return (
-                    <div onClick={() => history.push(`/modelDetail/id`)}>
-                      {text}
-                    </div>
-                  );
+                  return <div>{text}</div>;
                 },
               },
             }}
