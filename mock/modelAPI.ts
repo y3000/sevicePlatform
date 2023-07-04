@@ -14,7 +14,7 @@ const modelList: IModelData[] = [
   {
     id: 'm01',
     title: `ARIMA模型`,
-    descriptionTag: ['ARIMA模型', 'ARIMA模型', 'ARIMA模型'],
+    descriptionTag: ['ARIMA模型', '差分自回归移动平均模型', '时间序列预测'],
     content:
       'ARIMA（Autoregressive Integrated Moving Average）模型是一种常用的时间序列建模和预测方法，用于生态环境监测预警中的数据分析和预测。具体作用是进行数据预处理；数据建模；时间序列预测。ARIMA模型的应用范围也非常广泛，不仅可以应用于生态环境监测预警，还可以应用于经济、气象、交通等领域。例如一些需要建立时间序列模型的场景；数据具有周期性规律性的场景；数据平稳的场景。',
     algorithmicDeac:
@@ -30,7 +30,7 @@ const modelList: IModelData[] = [
   {
     id: 'm02',
     title: 'CAR模型',
-    descriptionTag: ['CAR模型', 'CAR模型', 'CAR模型'],
+    descriptionTag: ['CAR模型', '统计模型'],
     content:
       'CAR模型是一种空间统计模型，用于分析随机现象在空间上的分布和相关性。CAR模型可以用于空间建模、空间插值、空间回归等，其应用范围非常广泛，不仅可以应用于生态环境监测预警，还可以应用于气象、地理、交通等领域。在生态环境监测预警中，CAR模型可以用于分析空间分布规律和预测未来环境变化情况，为环境管理和保护提供技术支持。',
     algorithmicDeac:
@@ -47,7 +47,7 @@ const modelList: IModelData[] = [
   {
     id: 'm03',
     title: 'RBF模型',
-    descriptionTag: ['RBF模型', 'RBF模型', 'RBF模型'],
+    descriptionTag: ['RBF模型', '神经网络模型', '数据分析和预测'],
     content:
       'RBF（Radial Basis Function）神经网络模型是一种基于径向基函数的神经网络模型，广泛用于生态环境监测预警中的数据分析和预测。RBF神经网络模型可以用于数据分类和预测；数据关系分析；数据插值和空间预测。RBF神经网络模型可以应用于生态环境监测预警，还可以应用于金融、医疗、交通等领域。具体适用于数据关系较复杂的场景；对数据插值和空间预测要求较高的场景；数据具有非线性特征的场景。',
     algorithmicDeac:
@@ -86,7 +86,7 @@ const modelList: IModelData[] = [
   {
     id: 'm04',
     title: '决策树模型',
-    descriptionTag: ['决策树模型', '决策树模型', '决策树模型'],
+    descriptionTag: ['决策树模型', '分类和回归', '特征分析'],
     content:
       '决策树模型是一种基于树形结构的分类和回归分析方法。决策树模型可以用于数据分类、监测预警、特征分析等，并且其应用范围非常广泛，不仅可以应用在环保领域，还可以应用于金融、医疗、教育、军事等方面。在生态环境监测预警中，决策树模型可以帮助分析人员通过对大量数据的分析，判断环境质量是否达到标准，发现异常情况并及时采取措施。',
     algorithmicDeac:

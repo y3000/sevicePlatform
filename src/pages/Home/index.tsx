@@ -57,14 +57,12 @@ const HomePage: React.FC = () => {
           >
             <h2>知识图谱</h2>
             <p>
-              知识图谱（Knowledge
-              Graph），在图书情报界称为知识域可视化或知识领域映射地图，
-              是显示知识发展进程与结构关系的一系列各种不同的图形，用可视化技术描述知识资源及其载体，挖掘、分析、构建、绘制和显示知识及它们之间的相互联系。
+              知识图谱是显示知识发展进程与结构关系的一系列各种不同的图形，用可视化技术描述知识资源及其载体，挖掘、分析、构建、绘制和显示知识及它们之间的相互联系。
             </p>
           </div>
           <div
             className={styles.descCrad}
-            onClick={() => history.push('/modelDetail/m01')}
+            // onClick={() => history.push('/modelDetail/m01')}
           >
             <h2>时序模型</h2>
             <p>
@@ -75,22 +73,21 @@ const HomePage: React.FC = () => {
         <div className={styles.techContent}>
           <div
             className={styles.wairecard}
-            onClick={() => history.push('/modelDetail/m01')}
+            // onClick={() => history.push('/modelDetail/m01')}
           >
             <h2>异常检测</h2>
             <p style={{ width: '50%' }}>
               Anomaly Transformer 通过学习关联差异(Association Discrepancy)
-              来提升异常的可分性。技术上，它提出了Anomaly-Attention
-              来表征先验关联和序列关联，以及一个极小极大优化策略来获得更容易区分的关联差异。
+              来提升异常的可分性。
             </p>
           </div>
           <div
             className={styles.netcard}
-            onClick={() => history.push('/modelDetail/m01')}
+            // onClick={() => history.push('/modelDetail/m01')}
           >
             <h2>PINN 网络</h2>
             <p>
-              PINN是一种基于神经网络的模型，用于模拟和优化物理系统的行为，并推断出物理参数。通过一般非线性偏微分方程描述的任何给定的物理规律，应用该模型实现对传统数值计算方法的智能化改进，我们主要研究用于解决与偏微分方程(PDE)相关的各种问题:包括方程求解、参数反演、模型发现、控制与优化。
+              PINN是一种基于神经网络的模型，用于模拟和优化物理系统的行为，并推断出物理参数。
             </p>
           </div>
         </div>
