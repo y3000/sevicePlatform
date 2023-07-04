@@ -30,6 +30,7 @@ interface IModelData {
   descriptionTag?: string[]; //核心算法标签
   content: string; // 模型简介概述
   algorithmicDeac: string; //  模型算法介绍
+  algorithmicImgUrl?: string[]; // 算法介绍图片
   case: string; // 应用场景
   feature?: string; // 功能特点
   caseImgUrl?: string[]; // 应用场景图片地址
@@ -102,6 +103,20 @@ const SmartTechnologyPage: React.FC = () => {
       <div className={styles.introduce}>
         <h2 className={styles.title}>2. 模型算法简介</h2>
         <div className={styles.text}>{data.algorithmicDeac}</div>
+        <Image.PreviewGroup
+          preview={{
+            onChange: (current, prev) =>
+              console.log(`current index: ${current}, prev index: ${prev}`),
+          }}
+        >
+          <Space>
+            {data.algorithmicImgUrl?.length
+              ? data.algorithmicImgUrl.map((item, index) => {
+                  return <Image width={'100%'} src={item} key={index} />;
+                })
+              : ''}
+          </Space>
+        </Image.PreviewGroup>
       </div>
       <div className={styles.introduce}>
         <h2 className={styles.title}>3. 应用场景</h2>

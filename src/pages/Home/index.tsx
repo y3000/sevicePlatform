@@ -67,6 +67,9 @@ const HomePage: React.FC = () => {
             onClick={() => history.push('/modelDetail/m01')}
           >
             <h2>时序模型</h2>
+            <p>
+              TimesNet是时间序列分析的任务-通用基础模型。受多周期性的激励影响，TimesNet可以通过模块化体系结构解决复杂的时间变化，并通过有效的初始块捕获二维空间的周期内和周期间的变化。
+            </p>
           </div>
         </div>
         <div className={styles.techContent}>
@@ -76,8 +79,9 @@ const HomePage: React.FC = () => {
           >
             <h2>异常检测</h2>
             <p style={{ width: '50%' }}>
-              Southwest Land Ecological Environment Monitoring Intelligent Early
-              Warning Technology Research and Service Platform
+              Anomaly Transformer 通过学习关联差异(Association Discrepancy)
+              来提升异常的可分性。技术上，它提出了Anomaly-Attention
+              来表征先验关联和序列关联，以及一个极小极大优化策略来获得更容易区分的关联差异。
             </p>
           </div>
           <div
@@ -85,6 +89,9 @@ const HomePage: React.FC = () => {
             onClick={() => history.push('/modelDetail/m01')}
           >
             <h2>PINN 网络</h2>
+            <p>
+              PINN是一种基于神经网络的模型，用于模拟和优化物理系统的行为，并推断出物理参数。通过一般非线性偏微分方程描述的任何给定的物理规律，应用该模型实现对传统数值计算方法的智能化改进，我们主要研究用于解决与偏微分方程(PDE)相关的各种问题:包括方程求解、参数反演、模型发现、控制与优化。
+            </p>
           </div>
         </div>
         {/* 算法模型 */}
